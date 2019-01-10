@@ -1,22 +1,18 @@
 //
-//  AXHTTPNetworkingDemo.pch
+//  AXNetworkingDemo.pch
 //  AXNetworkingDemo
 //
 //  Created by xiaochenghua on 2019/1/8.
 //  Copyright © 2019 xiaochenghua. All rights reserved.
 //
 
-#ifndef AXHTTPNetworkingDemo_pch
-#define AXHTTPNetworkingDemo_pch
+#ifndef AXNetworkingDemo_pch
+#define AXNetworkingDemo_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import <AFNetworking/AFNetworking.h>
 #import <YYModel/YYModel.h>
-//#import <SAMKeychain/SAMKeychain.h>
-//#import "AXHTTPNetworking/AXNetworkingMacro.h"
-//#import "AXHTTPNetworking/AXNetworkingConstants.h"
-//#import "AXHTTPNetworking/AXNetworkingUtils.h"
 
-#endif /* AXHTTPNetworkingDemo_pch */
+#endif /* AXNetworkingDemo_pch */
