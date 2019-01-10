@@ -85,8 +85,8 @@ static AXNetworkingManager *_manager = nil;
     [self requestWithMethod:methodType
                         url:urlString
                  parameters:requestParameters
-                class:cls
-                    success:^(id  _Nullable responseObject) {
+                      class:cls
+                    success:^(id _Nullable responseObject) {
                         @AXNStrong(self)
                         [self handleWithResponseObject:responseObject class:cls completion:completion];
                     } failure:^(NSError * _Nonnull error) {
@@ -196,10 +196,6 @@ static AXNetworkingManager *_manager = nil;
 - (void)handleWithResponseObject:(id)responseObject class:(Class)cls error:(NSError *)error completion:(AXHTTPNetworkingCompletion)completion {
     if (!completion) { return; }
     AXNetworkingTemplateData *templateData = [self templateDataWithObject:responseObject class:cls error:error];
-    
-    //   输出请求相关日志
-    
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         //  主线程执行
         completion(templateData);

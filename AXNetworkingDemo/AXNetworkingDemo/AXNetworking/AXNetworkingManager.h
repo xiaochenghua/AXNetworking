@@ -31,9 +31,9 @@ typedef void(^AXHTTPNetworkingCompletion)(AXNetworkingTemplateData *templateData
  @param completion 请求完成的回调
  */
 - (void)requestWithUrl:(NSString *)url
-               parameters:(NSDictionary *)parameters
-                    class:(Class)cls
-               completion:(AXHTTPNetworkingCompletion)completion;
+            parameters:(NSDictionary *)parameters
+                 class:(Class)cls
+            completion:(AXHTTPNetworkingCompletion)completion;
 
 /**
  发起网络请求，支持POST、GET、HEAD三种常用请求方法
