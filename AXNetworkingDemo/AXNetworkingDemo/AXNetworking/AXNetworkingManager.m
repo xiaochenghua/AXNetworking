@@ -69,7 +69,7 @@ static AXNetworkingManager *_manager = nil;
 }
 
 #pragma mark - 网络请求
-- (void)requestWithUrl:(NSString *)url parameters:(NSDictionary *)parameters class:(Class)cls completion:(AXHTTPNetworkingCompletion)completion {
+- (void)requestWithUrl:(NSString *)url parameters:(NSDictionary *)parameters class:(Class)cls completion:(AXNetworkingCompletion)completion {
     [self requestWithMethod:AXNetworkingRequestMethodTypePOST
                         url:url
                  parameters:parameters
@@ -77,7 +77,7 @@ static AXNetworkingManager *_manager = nil;
                  completion:completion];
 }
 
-- (void)requestWithMethod:(AXNetworkingRequestMethodType)methodType url:(NSString *)url parameters:(NSDictionary *)parameters class:(Class)cls completion:(AXHTTPNetworkingCompletion)completion {
+- (void)requestWithMethod:(AXNetworkingRequestMethodType)methodType url:(NSString *)url parameters:(NSDictionary *)parameters class:(Class)cls completion:(AXNetworkingCompletion)completion {
     NSString *urlString = [NSURL URLWithString:url relativeToURL:self.baseURL].absoluteString;
     NSDictionary *requestParameters = [AXNetworkingUtils requestParametersWithUserParameters:parameters];
     
@@ -171,7 +171,7 @@ static AXNetworkingManager *_manager = nil;
  @param cls 需要解析成的实体类
  @param completion 最后需要执行的回调
  */
-- (void)handleWithResponseObject:(id)responseObject class:(Class)cls completion:(AXHTTPNetworkingCompletion)completion {
+- (void)handleWithResponseObject:(id)responseObject class:(Class)cls completion:(AXNetworkingCompletion)completion {
     [self handleWithResponseObject:responseObject class:cls error:nil completion:completion];
 }
 
@@ -181,7 +181,7 @@ static AXNetworkingManager *_manager = nil;
  @param error 错误信息
  @param completion 最后需要执行的回调
  */
-- (void)handleWithError:(NSError *)error completion:(AXHTTPNetworkingCompletion)completion {
+- (void)handleWithError:(NSError *)error completion:(AXNetworkingCompletion)completion {
     [self handleWithResponseObject:nil class:nil error:error completion:completion];
 }
 
@@ -193,7 +193,7 @@ static AXNetworkingManager *_manager = nil;
  @param error 错误信息
  @param completion 最后需要执行的回调
  */
-- (void)handleWithResponseObject:(id)responseObject class:(Class)cls error:(NSError *)error completion:(AXHTTPNetworkingCompletion)completion {
+- (void)handleWithResponseObject:(id)responseObject class:(Class)cls error:(NSError *)error completion:(AXNetworkingCompletion)completion {
     if (!completion) { return; }
     AXNetworkingTemplateData *templateData = [self templateDataWithObject:responseObject class:cls error:error];
     dispatch_async(dispatch_get_main_queue(), ^{

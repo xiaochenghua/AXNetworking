@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, AXNetworkingRequestMethodType) {
     AXNetworkingRequestMethodTypeHEAD,
 };
 
-typedef void(^AXHTTPNetworkingCompletion)(AXNetworkingTemplateData *templateData);
+typedef void(^AXNetworkingCompletion)(AXNetworkingTemplateData *templateData);
 
 @interface AXNetworkingManager : AFHTTPSessionManager
 
@@ -33,7 +33,7 @@ typedef void(^AXHTTPNetworkingCompletion)(AXNetworkingTemplateData *templateData
 - (void)requestWithUrl:(NSString *)url
             parameters:(NSDictionary *)parameters
                  class:(Class)cls
-            completion:(AXHTTPNetworkingCompletion)completion;
+            completion:(AXNetworkingCompletion)completion;
 
 /**
  发起网络请求，支持POST、GET、HEAD三种常用请求方法
@@ -48,7 +48,7 @@ typedef void(^AXHTTPNetworkingCompletion)(AXNetworkingTemplateData *templateData
                       url:(NSString *)url
                parameters:(NSDictionary *)parameters
                     class:(Class)cls
-               completion:(AXHTTPNetworkingCompletion)completion;
+               completion:(AXNetworkingCompletion)completion;
 
 @end
 
